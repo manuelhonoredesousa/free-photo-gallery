@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="javascripts/index.js" defer></script>
   </head>
   <body>
     <header>
@@ -18,17 +19,28 @@
       </div>
     </header>
     <main>
+ 
       <div class="view">
-        <% data.data.forEach(image => { %>
-        <figure>
-          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" alt="<%= image.title %>"/>
+        <dialog>
+          <!-- <div class="close btn">X</div> -->
+            <h2>.</h2>
+            <img src="/images/bg.jpg" style="width: 100%;">
+            <div class="image-option">
+              <a href="" target="_blank"><button class="btn">Source</button></a>
+              <button class="btn">Download</button>
+              <button class="btn close">Close</button>
+            </div>
+        </dialog>
+
+        <% data.data.forEach((image, index) => { %>
+        <figure id="<%= index %>">
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" id="openImage" alt="<%= image.title %>"/>
           <figcaption>
             <p>Title: <%= image.title.slice(0,50)+'...' %></p>
             <div class="image-option">
               <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">Source</button></a>
               <button class="btn">Download</button>
             </div>
-            
           </figcaption>
         </figure>
         <% }) %>
