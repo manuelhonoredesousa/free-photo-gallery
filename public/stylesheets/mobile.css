@@ -1,0 +1,13 @@
+@media (max-width: 500px) {
+    dialog{
+        min-width: 100%;
+    }
+    dialog .image-option {
+        padding: 0em .5em;
+        /* margin-top: 0.5em; */
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        /* column-gap: 0.3em; */
+      }
+}

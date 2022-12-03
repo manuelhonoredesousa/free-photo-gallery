@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/mobile.css" />
     <script src="javascripts/index.js" defer></script>
   </head>
   <body>
@@ -23,13 +24,15 @@
       <div class="view">
         <dialog>
           <!-- <div class="close btn">X</div> -->
-            <h2>.</h2>
-            <img src="/images/bg.jpg" style="width: 100%;">
-            <div class="image-option">
-              <a href="" target="_blank"><button class="btn">Source</button></a>
-              <button class="btn">Download</button>
-              <button class="btn close">Close</button>
-            </div>
+          <!-- <div class="prev"><div class="icon"></div></div> -->
+          <h2><span>.</span></h2>
+          <img src="/images/bg.jpg" style="width: 100%;">
+          <div class="image-option">
+            <a href="#" target="_blank"><button class="btn">Source</button></a>
+            <button class="btn">Download</button>
+            <button class="btn close">Close</button>
+          </div>
+          <!-- <div class="next"><div class="icon"></div></div> -->
         </dialog>
 
         <% data.data.forEach((image, index) => { %>
