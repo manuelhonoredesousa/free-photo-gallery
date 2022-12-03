@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="./../public/images/" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+
+      <div class="upload">
+        <input type="text" />
+        <button class="btn">Search Picture</button>
+      </div>
+    </header>
+    <main>
+      <div class="view">
+        <% data.data.forEach(image => { %>
+        <figure>
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" alt="<%= image.title %>"/>
+          <figcaption>
+            <p>Title: <%= image.title.slice(0,50)+'...' %></p>
+            <div class="image-option">
+              <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">Source</button></a>
+              <button class="btn">Download</button>
+            </div>
+            
+          </figcaption>
+        </figure>
+        <% }) %>
+      </div>
+    </main>
+    <footer>&copy; All right reserved 2022</footer>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Error</title>
+    <link rel="stylesheet" href="/stylesheets/error.css" />
+  </head>
+  <body>
+    <main>
+      <section>
+        <h1><%= error.status ? error.status : '500' %></h1>
+        <div class="text">
+          <h1><%= /*message.length > 15 ? 'Error' : message */ message %></h1>
+          <p>
+            Something is not right... You may have mistyped
+            the address, or the page has been moved to another URL. If you think
+            this is an error contact support.
+          </p>
+          <button id="get_back">Get back to previous page</button>
+          
+        </div>
+      </section>
+    </main>
+    <script src="src/main.js"></script>
+  </body>
+</html>
