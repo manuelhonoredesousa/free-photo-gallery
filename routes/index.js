@@ -1,13 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const google_images = require("./../modules/google_images")
-const test = require("./../json/test")
 /* GET home page. */
-router.get("/", async function (req, res, next) {
-  // const data = await google_images({query: "Mustang",nums: 3,size: "huge"});
-  const data = test
-  console.log(req.body);
-  res.render("index", { title: "Free Photo Gallery", data });
+router.get("/", function (req, res, next) {
+  console.log(">> This is a GET INDEX");
+  res.render("index", { title: "Free Photo Gallery"});
 });
 
 module.exports = router;

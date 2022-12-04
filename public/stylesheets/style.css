@@ -256,7 +256,15 @@ dialog {
   *//*padding: 0;
   */margin: auto auto;
   border: none;
-  /* border-radius: .5rem; */
+  transition: .3s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  -moz-transition: .3s ease-in-out;
+  -ms-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+}
+
+dialog img {
+  width: 100%;
 }
 
 /* main .dialog .header{

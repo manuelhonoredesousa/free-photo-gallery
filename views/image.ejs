@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="./../public/images/" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/header.css" />
+    <link rel="stylesheet" href="stylesheets/mobile.css" />
+    <script src="javascripts/image.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Free Photo Gallery</a></h1>
+      <div class="right-side">
+        <form action="/image" method="get">
+          <input type="text" name="search" value="<%= search %>"/>
+          <input type="submit" value="Search Picture" class="btn">        
+        </form>
+      </div>
+    </header>
+    <main>
+ 
+      <div class="view">
+        <dialog>
+          <div class="close btn">X</div>
+          <!-- <div class="prev"><div class="icon"></div></div> -->
+          <!-- <h2><span>.</span></h2> -->
+          <img src="/images/bg.jpg">
+          <div class="image-option">
+            <a href="#" target="_blank"><button class="btn">🌐 Source</button></a>
+            <button id="download" class="btn">🔽 Download</button>
+            <button id="prev" class="btn">◀ Prev</button>
+            <button id="next" class="btn">Next ▶</button>
+          </div>
+          <!-- <div class="next"><div class="icon"></div></div> -->
+        </dialog>
+        <% data.data.forEach((image, index) => { %>
+        <figure id="<%= index %>">
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" id="openImage" alt="<%= image.title %>"/>
+          <figcaption>
+            <p>Title: <%= image.title.slice(0,50)+'...' %></p>
+            <div class="image-option">
+              <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a>
+              <button id="download" class="btn">🔽 Download</button>
+            </div>
+          </figcaption>
+        </figure>
+        <% }) %>
+      </div>
+      <div class="pagination">
+        <button id="prev" class="btn">◀ Previous Page</button>
+        <button class="btn" >1</button>
+        <button class="btn" >2</button>
+        <button class="btn" >3</button>
+        <button class="btn" >4</button>
+        <button class="btn" >5</button>
+        <button id="next" class="btn">Next Page ▶</button>
+      </div>
+    </main>
+    <footer>&copy; All right reserved 2022</footer>
+  </body>
+</html>

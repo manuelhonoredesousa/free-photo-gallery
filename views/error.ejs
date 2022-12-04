@@ -12,13 +12,15 @@
       <section>
         <h1><%= error.status ? error.status : '500' %></h1>
         <div class="text">
-          <h1><%= /*message.length > 15 ? 'Error' : message */ message %></h1>
+          <!-- message.length > 15 ? 'Error' : message  -->
+          <h1>Something is not right</h1>
           <p>
-            Something is not right... You may have mistyped
+            <%= message %>
+            <!-- Something is not right... You may have mistyped
             the address, or the page has been moved to another URL. If you think
-            this is an error contact support.
+            this is an error contact support. -->
           </p>
-          <button id="get_back">Get back to previous page</button>
+          <button id="get_back">Get back to home page</button>
           
         </div>
       </section>
