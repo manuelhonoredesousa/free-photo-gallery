@@ -13,10 +13,12 @@
   <body>
     <header>
       <h1><%= title %></h1>
-
-      <div class="upload">
-        <input type="text" />
-        <button class="btn">Search Picture</button>
+      <div class="right-side">
+        <form action="/" method="post">
+          <input type="text" name="search" />
+          <input type="submit" value="Search Picture" class="btn">        
+        </form>
+        <button class="btn">⚙️</button>
       </div>
     </header>
     <main>
@@ -28,26 +30,34 @@
           <!-- <h2><span>.</span></h2> -->
           <img src="/images/bg.jpg" style="width: 100%;">
           <div class="image-option">
-            <a href="#" target="_blank"><button class="btn">Source</button></a>
-            <button class="btn">Download</button>
-            <button class="btn">◀ Prev</button>
-            <button class="btn">Next ▶</button>
+            <a href="#" target="_blank"><button class="btn">🌐 Source</button></a>
+            <button id="download" class="btn">🔽 Download</button>
+            <button id="prev" class="btn">◀ Prev</button>
+            <button id="next" class="btn">Next ▶</button>
           </div>
           <!-- <div class="next"><div class="icon"></div></div> -->
         </dialog>
-
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
           <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" id="openImage" alt="<%= image.title %>"/>
           <figcaption>
             <p>Title: <%= image.title.slice(0,50)+'...' %></p>
             <div class="image-option">
-              <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">Source</button></a>
-              <button class="btn">Download</button>
+              <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a>
+              <button id="download" class="btn">🔽 Download</button>
             </div>
           </figcaption>
         </figure>
         <% }) %>
+      </div>
+      <div class="pagination">
+        <button id="prev" class="btn">◀ Previous Page</button>
+        <button class="btn" >1</button>
+        <button class="btn" >2</button>
+        <button class="btn" >3</button>
+        <button class="btn" >4</button>
+        <button class="btn" >5</button>
+        <button id="next" class="btn">Next Page ▶</button>
       </div>
     </main>
     <footer>&copy; All right reserved 2022</footer>

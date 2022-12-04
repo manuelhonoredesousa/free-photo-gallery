@@ -57,7 +57,7 @@ header {
   border-bottom-right-radius: 25px;
   text-transform: uppercase;
   padding: 1em;
-  text-align: center;
+  /* text-align: center; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -65,52 +65,80 @@ header {
   width: 100%;
   z-index: 9999;
 }
+header form input[type="submit"],header form input[type="text"]{padding: .5em;}
+header form input[type="text"]{
+  /* background-color: #00875f; */
+  border: 1px solid var(--color_primary_hover);
+  /* background-color: var(--color_gray_550); */
+  /* color: var(--color_white); */
+  min-width: 400px;
+  outline: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+header form input[type="submit"]{
+  /* background-color: #721C24; */
+}
+header .right-side{
+  display: flex;
+  align-items: center;
+  gap: 3em;
+}
+header .right-side button{
+  padding: .5em;
+}
+/* header form{} */
 /* header h1{ */
 /* color: var(--color_gray_700); */
 /* } */
-header .upload {
-  gap: 1em;
-  display: flex;
+/* header .upload { */
+  /* gap: 1em; */
+  /* display: flex; */
   /* align-items: center; */
   /* justify-content: center; */
-}
+/* } */
 /* header .upload input{} */
-header .upload input {
-  width: 40%;
-  padding: 1.4em 2em;
-  border: none;
-  outline: none;
-  border-radius: 16px;
-  -webkit-border-radius: 16px;
-  -moz-border-radius: 16px;
-  -ms-border-radius: 16px;
-  -o-border-radius: 16px;
-}
+/* header .upload input { */
+  /* width: 40%; */
+  /* padding: 1.4em 2em; */
+  /* border: none; */
+  /* outline: none; */
+  /* border-radius: 16px; */
+  /* -webkit-border-radius: 16px; */
+  /* -moz-border-radius: 16px; */
+  /* -ms-border-radius: 16px; */
+  /* -o-border-radius: 16px; */
+/* } */
+/* header .upload button { */
+  /* padding: 1em; */
+/* } */
+
 .btn {
   outline: none;
-  /* border: none; */
   background-color: var(--color_gray_550);
   color: var(--color_white);
   border: 1px solid var(--color_primary_hover);
   font-weight: bolder;
   cursor: pointer;
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
   -moz-transition: 0.3s ease-in-out;
   -ms-transition: 0.3s ease-in-out;
   -o-transition: 0.3s ease-in-out;
 }
-header .upload button {
-  padding: 1em;
-}
+
 .btn:hover {
   background-color: var(--color_primary_hover);
   color: var(--color_white);
+  box-shadow: none;
 }
 main {
   display: flex;
@@ -216,22 +244,20 @@ dialog span {
 /* } */
 /* dialog span{} */
 dialog {
-  /* background-image: url(./../images/bg.jpg); */
-  /* background-color: rgba(255 255 255 / .3); */
-  background-color: transparent;
-  
-  /* backdrop-filter: blur(5em); */
-  /* width: 98%; */
-  /* height: 50%; */
-  /* color: white; */
-  /* background-repeat: no-repeat; */
-  /* background-position: center; */
-  /* padding: 0; */
-  margin: auto auto;
+  /*background-image: url(./../images/bg.jpg);
+  *//*background-color: rgba(255 255 255 / .3);
+  */background-color: transparent;
+  /*backdrop-filter: blur(5em);
+  *//*width: 98%;
+  *//*height: 50%;
+  *//*color: white;
+  *//*background-repeat: no-repeat;
+  *//*background-position: center;
+  *//*padding: 0;
+  */margin: auto auto;
   border: none;
   /* border-radius: .5rem; */
 }
-
 
 /* main .dialog .header{
     background-color: var(--color_primary);
@@ -240,6 +266,10 @@ dialog {
     padding: 1em;
 } */
 
+main dialog .close:hover {
+  background-color: #F8D7DA;
+  color: #721C24;
+}
 main .close {
 width: 2em;
 display: grid;
@@ -256,6 +286,14 @@ border-radius: 16px;
 -ms-border-radius: 16px;
 -o-border-radius: 16px;
 }
+main .pagination{
+  margin: 0 auto;
+}
+
+main .pagination .btn{
+  padding: .5em;
+}
+
 
 main .view {
   display: flex;
@@ -292,6 +330,11 @@ main .view figure {
 main .view figure img {
   cursor: pointer;
   width: 100%;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
 }
 main .image-option {
   margin-top: 0.5em;

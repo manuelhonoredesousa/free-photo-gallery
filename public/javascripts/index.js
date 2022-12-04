@@ -1,7 +1,13 @@
-const openModal = document.querySelectorAll("#openImage")
-const modal = document.querySelector("dialog")
-const closeModal = document.querySelector(".close")
+const $ImgOpenModal = document.querySelectorAll("#openImage")
+const $modalDialog = document.querySelector("dialog")
+const $BtnCloseModal = document.querySelector(".close")
+const $BtnDownload = document.querySelectorAll("#download")
+const $BtnPrev = document.querySelector("#prev")
+const $BtnNext = document.querySelector("#next")
 
 
-openModal.forEach(openBtn => openBtn.onclick = () => modal.showModal())
-closeModal.onclick = () => modal.close()
+$ImgOpenModal.forEach(openBtn => openBtn.onclick = () => $modalDialog.showModal())
+$BtnCloseModal.onclick = () => $modalDialog.close()
+$BtnDownload.forEach(btn => btn.onclick = () => alert("Download"))
+$BtnPrev.onclick = () => alert("Prev")
+$BtnNext.onclick = () => alert("Next")
