@@ -88,9 +88,10 @@ header .upload input {
 }
 .btn {
   outline: none;
-  border: none;
+  /* border: none; */
   background-color: var(--color_gray_550);
   color: var(--color_white);
+  border: 1px solid var(--color_primary_hover);
   font-weight: bolder;
   cursor: pointer;
   border-radius: 8px;
@@ -230,9 +231,7 @@ dialog {
   border: none;
   /* border-radius: .5rem; */
 }
-dialog .btn {
-  border: 1px solid var(--color_primary_hover);
-}
+
 
 /* main .dialog .header{
     background-color: var(--color_primary);
@@ -241,20 +240,22 @@ dialog .btn {
     padding: 1em;
 } */
 
-/* main .close { */
-/* width: 2em; */
-/* display: grid; */
-/* place-items: center; */
-/* padding: 0.5em; */
-/* position: absolute; */
-/* right: 1em; */
-/* top: .3em; */
-/* border-radius: 16px; */
-/* -webkit-border-radius: 16px; */
-/* -moz-border-radius: 16px; */
-/* -ms-border-radius: 16px; */
-/* -o-border-radius: 16px; */
-/* } */
+main .close {
+width: 2em;
+display: grid;
+place-items: center;
+padding: .5em;
+position: absolute;
+color: #F8D7DA;       
+border-color: #721C24;
+right: .1em;
+top: .1em;
+border-radius: 16px;
+-webkit-border-radius: 16px;
+-moz-border-radius: 16px;
+-ms-border-radius: 16px;
+-o-border-radius: 16px;
+}
 
 main .view {
   display: flex;
