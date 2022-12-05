@@ -1,9 +1,9 @@
 const google = require("googleapis").google;
 const customSearch = google.customsearch("v1");
-const googleSearchCredentials = require("../json/google_image.json");
+const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
 
 async function googleImage({ query, nums, size }) {
-  console.log(`>> Searching '${query}' <<`);
+  // console.log(`>> Searching '${query}' <<`);
     const res = await customSearch.cse.list({
       auth: googleSearchCredentials.apiKey,
       cx: googleSearchCredentials.seachEngineId,

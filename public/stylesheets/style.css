@@ -295,6 +295,7 @@ border-radius: 16px;
 -o-border-radius: 16px;
 }
 main .pagination{
+  
   margin: 0 auto;
 }
 
@@ -310,6 +311,7 @@ main .view {
   justify-content: center;
   gap: 1em;
   margin-top: 6em;
+  margin-bottom: 2em;
   /* margin-bottom: 5em; */
   /* background-image: url(/src/upload/upload.png); */
   /* background-size: cover; */

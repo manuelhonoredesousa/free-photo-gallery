@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const google_images = require("../modules/google_images");
-const test = require("../json/test");
+const test = require("../src/test");
 
 router.get("/", function (req, res, next) {
   const { search } = req.query;
