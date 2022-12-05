@@ -79,9 +79,9 @@ header form input[type="text"]{
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
 }
-header form input[type="submit"]{
+/* header form input[type="submit"]{ */
   /* background-color: #721C24; */
-}
+/* } */
 header .right-side{
   display: flex;
   align-items: center;

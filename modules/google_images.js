@@ -3,6 +3,7 @@ const customSearch = google.customsearch("v1");
 const googleSearchCredentials = require("../json/google_image.json");
 
 async function googleImage({ query, nums, size }) {
+  console.log(`>> Searching '${query}' <<`);
     const res = await customSearch.cse.list({
       auth: googleSearchCredentials.apiKey,
       cx: googleSearchCredentials.seachEngineId,
