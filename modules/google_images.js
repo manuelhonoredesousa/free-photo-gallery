@@ -1,6 +1,7 @@
 const google = require("googleapis").google;
 const customSearch = google.customsearch("v1");
-const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
+// const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
+const googleSearchCredentials = require("./../src/apiKey.json")
 
 async function googleImage({ query, nums, size }) {
   // console.log(`>> Searching '${query}' <<`);
@@ -30,4 +31,5 @@ async function googleImage({ query, nums, size }) {
     };
   }
 
+  // googleImage({ query: "migos", nums: 10, size: 'huge' })
 module.exports = googleImage;

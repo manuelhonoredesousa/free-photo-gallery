@@ -7,11 +7,13 @@ router.get("/", function (req, res, next) {
   const { search } = req.query;
   const srchNum = 10;
   const quality = "huge";
-  // const data = test
+  const data = test
   if (search) {
-    google_images({ query: search, nums: srchNum, size: quality })
-      .then((data) => res.render("image", { title: "Search Page:", search, data }))
-      .catch((err) => res.render("error", { error: { status: 500 }, message: "Sorry, the connection may not be good, or an unknown error occurred while doing the search, please try again..." }));
+    res.render("image", { title: "Search Page:", search, data })
+    // console.log(search);
+    // google_images({ query: search, nums: srchNum, size: quality })
+      // .then((data) => res.render("image", { title: "Search Page:", search, data }))
+      // .catch((err) => res.render("error", { error: { status: 500 }, message: "Sorry, the connection may not be good, or an unknown error occurred while doing the search, please try again..." }));
   } else res.render("error", { error: { status: 500 }, message: "You have to search something on home page to show the image that you want..." });
 });
 

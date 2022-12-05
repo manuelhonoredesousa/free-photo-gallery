@@ -30,7 +30,7 @@
           <div class="close btn">X</div>
           <!-- <div class="prev"><div class="icon"></div></div> -->
           <!-- <h2><span>.</span></h2> -->
-          <img src="/images/bg.jpg">
+          <img id="dialog_image" src="images/search_finding.svg">
           <div class="image-option">
             <a href="#" target="_blank"><button class="btn">🌐 Source</button></a>
             <button id="download" class="btn">🔽 Download</button>
@@ -41,10 +41,10 @@
         </dialog>
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
-          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" id="openImage" alt="<%= image.title %>"/>
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" onclick="showTheImage('<%= image.image %>')" alt="<%= image.title %>"/>
           <figcaption>
-            <p>Title: <%= image.title.slice(0,50)+'...' %></p>
-            <div class="image-option">
+              <p>Title: <%= image.title.slice(0,50)+'...' %></p>
+            <div class="image-option ">
               <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a>
               <button id="download" class="btn">🔽 Download</button>
             </div>
