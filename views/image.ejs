@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="stylesheets/mobile.css" />
     <script src="javascripts/image.js" defer></script>
   </head>
-  <body>
+  <body >
     <header>
       <h1><a href="/">Free Photo Gallery</a></h1>
       <div class="right-side">
@@ -33,7 +33,7 @@
           <img id="dialog_image" src="images/search_finding.svg">
           <div class="image-option">
             <a href="#" target="_blank"><button class="btn">🌐 Source</button></a>
-            <button id="download" class="btn">🔽 Download</button>
+            <button id="dialog_download" class="btn">🔽 Download</button>
             <button id="prev" class="btn">◀ Prev</button>
             <button id="next" class="btn">Next ▶</button>
           </div>
@@ -41,12 +41,12 @@
         </dialog>
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
-          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" onclick="showTheImage('<%= image.image %>')" alt="<%= image.title %>"/>
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" class="thumb_image" img_link="<%= image.image %>" onclick="showTheImage('<%= index %>')" alt="<%= image.title %>"/>
           <figcaption>
               <p>Title: <%= image.title.slice(0,50)+'...' %></p>
             <div class="image-option ">
               <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a>
-              <button id="download" class="btn">🔽 Download</button>
+              <button id="download" class="btn disable" onclick="downloadImage('<%= index %>')">🔽 Download</button>
             </div>
           </figcaption>
         </figure>

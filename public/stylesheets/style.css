@@ -387,6 +387,15 @@ main .image-option button {
   padding: 0.5em;
   /* background-color: red; */
 }
+.disable{
+  cursor: not-allowed;
+  background-color: var(--color_gray_300);
+  color: var(--color_gray_700);
+}
+.disable:hover{
+  background-color: var(--color_gray_300);
+  color: var(--color_gray_700);
+}
 footer {
   background-color: var(--color_primary);
   margin-top: 2em;
