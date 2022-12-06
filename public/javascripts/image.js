@@ -1,72 +1,60 @@
-// const $ImgOpenModal = document.querySelectorAll("#openImage")
 const $modalDialog = document.querySelector("dialog");
 const $BtnCloseModal = document.querySelector(".close");
-const $BtnDownload = document.querySelectorAll("#download");
+const $BtnDownload = document.querySelector("#download");
 const $BtnPrev = document.querySelector("#prev");
 const $BtnNext = document.querySelector("#next");
 const $DialogImage = document.querySelector("#dialog_image");
+const $DialogTitle = document.querySelector("#dialog_title");
+const $DialogLink = document.querySelector("#dialog_source");
 const $body = document.querySelector("body");
-const $allImageOnPage = Array.from(
-  document.getElementsByClassName("thumb_image")
-);
+const $allImageOnPage = Array.from(document.getElementsByClassName("thumb_image"));
 const imageList = [];
 let currentImageOnDialog = null;
 
-// $ImgOpenModal.forEach(openBtn => openBtn.onclick = () => $modalDialog.showModal())
-// $BtnDownload.forEach(btn => btn.onclick = () => downloadImage())
 $body.onload = () => loaddingPage();
 $BtnCloseModal.onclick = () => closeTheImage();
 $BtnNext.onclick = () => nextImage(currentImageOnDialog);
-$BtnPrev.onclick = () => alert("Prev");
+$BtnPrev.onclick = () => prevImage(currentImageOnDialog);
 
 function setImageOnDialog(image) {
-  $DialogImage.src = image;
+  $DialogImage.src = imageList[image].imgLink;
+  $DialogTitle.textContent = imageList[image].alt
+  $DialogLink.setAttribute("href", imageList[image].source)
+}
+function setDefaultDialogImage() {
+  $DialogImage.src = "images/search_finding.svg";
 }
 function closeTheImage() {
   $modalDialog.close();
-  $DialogImage.src = "images/search_finding.svg";
+  setDefaultDialogImage();
   currentImageOnDialog = null;
 }
 function showTheImage(id) {
-  const imageId = parseInt(id);
-  //   const imageLink = data[1];
-  currentImageOnDialog = imageId;
+  currentImageOnDialog = parseInt(id);
   $modalDialog.showModal();
-  setImageOnDialog(imageList[imageId].imgLink);
-  //   setImageOnDialog(imageLink);
+  setImageOnDialog(currentImageOnDialog);
 }
 
 function nextImage(id) {
-//   verifyNextPrevBTN();
+  setDefaultDialogImage();
   const next = id + 1;
-  //   console.log(id);
-  //   console.log(next);
   const nextImageExistOnImageList =
     id + 1 <= imageList.length - 1 ? true : false;
   if (nextImageExistOnImageList) {
-    setImageOnDialog(imageList[next].imgLink);
+    setImageOnDialog(next);
     currentImageOnDialog = next;
-    // console.log(imageList[next].imgLink);
-  }
+  } else setImageOnDialog(currentImageOnDialog);
+}
+function prevImage(id) {
+  setDefaultDialogImage();
+  const prev = id - 1;
+  const prevImageExistOnImageList = id - 1 >= 0 ? true : false;
+  if (prevImageExistOnImageList) {
+    setImageOnDialog(prev);
+    currentImageOnDialog = prev;
+  } else setImageOnDialog(currentImageOnDialog);
+}
 
-}
-function verifyNextPrevBTN() {
-    //    else {
-    // $BtnNext.setAttribute("disabled", true);
-    // $BtnNext.classList.add("disable");
-//   }
-  const canEnableNext =
-    currentImageOnDialog + 1 <= imageList.length - 1 ? true : false;
-  // const canEnablePrev = currentImageOnDialog+1 <= imageList.length - 1 ? true : false;
-  if (canEnableNext) {
-    $BtnNext.setAttribute("disabled", false);
-    $BtnNext.classList.remove("disable");
-  }
-  // if(canEnableNext){
-  // $BtnNext.setAttribute("disabled",false)
-  // $BtnNext.classList.remove("disable")
-  // }
-}
 function downloadImage(id) {
   console.log("IS", id);
   //   alert('ID -> ', id)
@@ -76,7 +64,8 @@ function loaddingPage() {
   $allImageOnPage.forEach((image, index) => {
     const toSave = {
       id: index,
-      alt: image.alt,
+      alt: image.alt.slice(0,40)+'...',
+      source: image.attributes.img_source.value,
       imgLink: image.attributes.img_link.value,
     };
     imageList.push(toSave);

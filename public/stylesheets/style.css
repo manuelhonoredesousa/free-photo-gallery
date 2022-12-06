@@ -71,7 +71,7 @@ header form input[type="text"]{
   border: 1px solid var(--color_primary_hover);
   /* background-color: var(--color_gray_550); */
   /* color: var(--color_white); */
-  min-width: 400px;
+  min-width: 300px;
   outline: none;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
@@ -143,6 +143,7 @@ header .right-side button{
 main {
   display: flex;
   flex-direction: column;
+  /* background-color: red; */
   /* padding-top: 8em; */
   /* padding: 1em; */
   /* backdrop-filter: blur(5px); */
@@ -279,6 +280,7 @@ main dialog .close:hover {
   color: #721C24;
 }
 main .close {
+  background-color: var(--color_primary_hover);
 width: 2em;
 display: grid;
 place-items: center;
@@ -305,15 +307,19 @@ main .pagination .btn{
 
 
 main .view {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* flex-wrap: wrap; */
+  /* justify-content: center; */
+  /* gap: 1em; */
 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-  align-items: flex-start;
+  padding: 1em;
+  column-count: 4;
+  column-gap: 10px;
+  /* align-items: flex-start; */
   /* align-items: center; */
-
   margin-top: 6em;
+  /* background-color: ; */
   margin-bottom: 2em;
   /* margin-bottom: 5em; */
   /* background-image: url(/src/upload/upload.png); */
@@ -323,31 +329,34 @@ main .view {
   /* background-attachment: fixed; */
   /* gap: 1em; */
   /* row-gap: .5em; */
-  min-height: 87vh;
+  min-height: 70vh;
 }
 main .view figure {
   /* border:1px solid var(--color_secundary); */
   /* background-color: var(--); */
-  padding: 0.5em;
   /* background-color: #e1fb4c36; */
-  backdrop-filter: blur(5px);
+  /* backdrop-filter: blur(5px); */
+  /* padding: 0.5em; */
   /* background-color: var(--color_primary_transp); */
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  /* display: flex; */
+  /* min-width: 300px; */
+  /* flex-direction: column; */
+  /* margin-bottom: 10px; */
 
-  background-color: var(--color_primary_transp);
-  width: 20em;
+  /* background-color: var(--color_primary_transp); */
+  /* width: 20em; */
   /* height: 16em; */
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
+  /* border-radius: 8px; */
+  /* -webkit-border-radius: 8px; */
+  /* -moz-border-radius: 8px; */
+  /* -ms-border-radius: 8px; */
+  /* -o-border-radius: 8px; */
 }
 main .view figure img {
   cursor: pointer;
   width: 100%;
+  padding: 0.5em;
+  background-color: var(--color_primary_transp);
   border-radius: .5rem;
   -webkit-border-radius: .5rem;
   -moz-border-radius: .5rem;
@@ -356,46 +365,66 @@ main .view figure img {
 }
 /* main .image-legend { */
   /* background-color: blueviolet; */
-/* } */
-main .image-option {
-  /* margin-top: 0.5em; */
+  /* } */
+  main .image-option .title{
+    /* background-color: rgb(51, 19, 82); */
+    /* flex:1; */
+    /* width: 100%; */
+
+  }
+  main .image-option .btn_option{
+    /* background-color: blueviolet; */
+    /* flex:1; */
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   align-items: center;
+  /* flex: 1; */
   column-gap: 0.3em;
+}
+main .image-option h5{
+  color: var(--color_white);
+}
+main .image-option {
+  /* background-color: #00875f; */
+  /* margin-top: 0.5em; */
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  
   /* background-color: #721C24; */
   /* flex: 1; */
 }
 
-figcaption{
+/* figcaption{ */
   /* background-color: #04d361; */
-  flex:1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
+  /* flex:1; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-between; */
   /* height: calc(100%-60%); */
   /* margin-bottom: -2em; */
   /* position: absolute; */
   /* bottom: 0; */
   /* right: 0; */
-}
-figcaption p{
-  padding: .5em 0;
-}
+/* } */
+/* figcaption p{ */
+  /* padding: .5em 0; */
+/* } */
 main .image-option button {
   padding: 0.5em;
   /* background-color: red; */
 }
-.disable{
-  cursor: not-allowed;
-  background-color: var(--color_gray_300);
-  color: var(--color_gray_700);
-}
-.disable:hover{
-  background-color: var(--color_gray_300);
-  color: var(--color_gray_700);
-}
+/* .disable{ */
+  /* cursor: not-allowed; */
+  /* background-color: var(--color_gray_300); */
+  /* color: var(--color_gray_700); */
+/* } */
+/* .disable:hover{ */
+  /* background-color: var(--color_gray_300); */
+  /* color: var(--color_gray_700); */
+/* } */
 footer {
   background-color: var(--color_primary);
   margin-top: 2em;

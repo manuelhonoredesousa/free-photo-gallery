@@ -1,13 +1,49 @@
+@media (max-width: 280px) {
+  /* header form input[type="text"]{} */
+
+  main .view {
+    column-count: 1;
+    column-gap: 15px;
+  }
+}
+@media (max-width: 480px) {
+  /* Header to bem in bottom */
+
+  main .view {
+    column-count: 2;
+    column-gap: 10px;
+  }
+}
+/* @media (max-width: 460px) {} */
 @media (max-width: 500px) {
-    dialog{
-        min-width: 100%;
+    dialog {
+      min-width: 100%;
     }
     dialog .image-option {
-        padding: 0em .5em;
-        /* margin-top: 0.5em; */
-        /* display: flex; */
-        /* justify-content: center; */
-        /* align-items: center; */
-        /* column-gap: 0.3em; */
-      }
+      padding: 0em 0.5em;
+      /* margin-top: 0.5em; */
+      /* display: flex; */
+      /* justify-content: center; */
+      /* align-items: center; */
+      /* column-gap: 0.3em; */
+    }
+  }
+@media (max-width: 724px) {
+  main .image-option .btn_option {
+    width: 100%;
+    margin-top: 0.3em;
+  }
+  /* main .view { */
+    /* column-count: 3; */
+    /* column-gap: 10px; */
+  /* } */
+}
+
+@media (max-width: 854px) {
+  header h1 {
+    display: none;
+  }
+  header {
+    justify-content: flex-end;
+  }
 }

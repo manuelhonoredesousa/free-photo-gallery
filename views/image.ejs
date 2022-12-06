@@ -32,23 +32,26 @@
           <!-- <h2><span>.</span></h2> -->
           <img id="dialog_image" src="images/search_finding.svg">
           <div class="image-option">
-            <a href="#" target="_blank"><button class="btn">🌐 Source</button></a>
-            <button id="dialog_download" class="btn">🔽 Download</button>
-            <button id="prev" class="btn">◀ Prev</button>
-            <button id="next" class="btn">Next ▶</button>
+            <div class="title"><h5 id="dialog_title"></h5></div>
+            <div class="btn_option">
+              <a href="#" id="dialog_source" target="_blank"><button class="btn">🌐 Source</button></a>
+              <button id="dialog_download" class="btn">🔽 Download</button>
+              <button id="prev" class="btn">◀ Prev</button>
+              <button id="next" class="btn">Next ▶</button>
+            </div>
           </div>
           <!-- <div class="next"><div class="icon"></div></div> -->
         </dialog>
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
-          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" class="thumb_image" img_link="<%= image.image %>" onclick="showTheImage('<%= index %>')" alt="<%= image.title %>"/>
-          <figcaption>
-              <p>Title: <%= image.title.slice(0,50)+'...' %></p>
-            <div class="image-option ">
-              <a href="<%= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a>
-              <button id="download" class="btn disable" onclick="downloadImage('<%= index %>')">🔽 Download</button>
-            </div>
-          </figcaption>
+          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" class="thumb_image" img_source="<%= image.detail.contextLink %>" img_link="<%= image.image %>" onclick="showTheImage('<%= index %>')" alt="<%= image.title %>"/>
+          <!-- <figcaption> -->
+              <!-- <p>Title: <%#= image.title.slice(0,50)+'...' %></p> -->
+            <!-- <div class="image-option "> -->
+              <!-- <a href="<%#= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a> -->
+              <!-- <button id="download" class="btn disable" onclick="downloadImage('<%#= index %>')">🔽 Download</button> -->
+            <!-- </div> -->
+          <!-- </figcaption> -->
         </figure>
         <% }) %>
       </div>
