@@ -143,6 +143,7 @@ header .right-side button{
 main {
   display: flex;
   flex-direction: column;
+  padding: 0.5em;
   /* background-color: red; */
   /* padding-top: 8em; */
   /* padding: 1em; */
@@ -313,9 +314,10 @@ main .view {
   /* justify-content: center; */
   /* gap: 1em; */
 
-  padding: 1em;
+
   column-count: 4;
   column-gap: 10px;
+  /* row-gap: 15px; */
   /* align-items: flex-start; */
   /* align-items: center; */
   margin-top: 6em;
@@ -356,7 +358,7 @@ main .view figure img {
   cursor: pointer;
   width: 100%;
   padding: 0.5em;
-  background-color: var(--color_primary_transp);
+  /* background-color: var(--color_primary_transp); */
   border-radius: .5rem;
   -webkit-border-radius: .5rem;
   -moz-border-radius: .5rem;

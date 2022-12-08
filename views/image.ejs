@@ -11,30 +11,30 @@
     <link rel="stylesheet" href="stylesheets/mobile.css" />
     <script src="javascripts/image.js" defer></script>
   </head>
-  <body >
+  <body>
     <header>
       <h1><a href="/">Free Photo Gallery</a></h1>
       <div class="right-side">
         <form action="/image" method="get">
-          <input type="text" name="search" value="<%= search %>"/>
-          <input type="submit" value="Search Picture" class="btn">        
+          <input type="text" name="search" value="<%= search %>" />
+          <input type="submit" value="Search Picture" class="btn" />
         </form>
       </div>
     </header>
     <main>
-      <div class="result-information">
-        //TODO work on this feature
-      </div>
+      <div class="result-information">//TODO work on this feature</div>
       <div class="view">
         <dialog>
           <div class="close btn">X</div>
           <!-- <div class="prev"><div class="icon"></div></div> -->
           <!-- <h2><span>.</span></h2> -->
-          <img id="dialog_image" src="images/search_finding.svg">
+          <img id="dialog_image" src="images/search_finding.svg" />
           <div class="image-option">
             <div class="title"><h5 id="dialog_title"></h5></div>
             <div class="btn_option">
-              <a href="#" id="dialog_source" target="_blank"><button class="btn">🌐 Source</button></a>
+              <a href="#" id="dialog_source" target="_blank"
+                ><button class="btn">🌐 Source</button></a
+              >
               <button id="dialog_download" class="btn">🔽 Download</button>
               <button id="prev" class="btn">◀ Prev</button>
               <button id="next" class="btn">Next ▶</button>
@@ -44,25 +44,30 @@
         </dialog>
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
-          <img src="<%= /*image.image*/ image.detail.thumbnailLink %>" class="thumb_image" img_source="<%= image.detail.contextLink %>" img_link="<%= image.image %>" onclick="showTheImage('<%= index %>')" alt="<%= image.title %>"/>
+          <img
+            src="<%= /*image.image*/ image.detail.thumbnailLink %>"
+            class="thumb_image"
+            img_source="<%= image.detail.contextLink %>"
+            img_link="<%= image.image %>"
+            onclick="showTheImage('<%= index %>')"
+            alt="<%= image.title %>"
+          />
           <!-- <figcaption> -->
-              <!-- <p>Title: <%#= image.title.slice(0,50)+'...' %></p> -->
-            <!-- <div class="image-option "> -->
-              <!-- <a href="<%#= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a> -->
-              <!-- <button id="download" class="btn disable" onclick="downloadImage('<%#= index %>')">🔽 Download</button> -->
-            <!-- </div> -->
+          <!-- <p>Title: <%#= image.title.slice(0,50)+'...' %></p> -->
+          <!-- <div class="image-option "> -->
+          <!-- <a href="<%#= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a> -->
+          <!-- <button id="download" class="btn disable" onclick="downloadImage('<%#= index %>')">🔽 Download</button> -->
+          <!-- </div> -->
           <!-- </figcaption> -->
         </figure>
         <% }) %>
       </div>
       <div class="pagination">
-        <button id="prev" class="btn">◀ Previous Page</button>
-        <button class="btn" >1</button>
-        <button class="btn" >2</button>
-        <button class="btn" >3</button>
-        <button class="btn" >4</button>
-        <button class="btn" >5</button>
-        <button id="next" class="btn">Next Page ▶</button>
+        <button id="prev" class="btn">◀ Prev</button>
+        <% for( let i = 11; i <= 11+2; i++ ) { %>
+          <button class="btn"><%= i %></button>
+        <% } %>
+        <button id="next" class="btn">Next ▶</button>
       </div>
     </main>
     <footer>&copy; All right reserved 2022</footer>
