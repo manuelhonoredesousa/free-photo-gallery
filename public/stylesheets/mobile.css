@@ -16,6 +16,11 @@
     min-width: 248px;
   }
 }
+@media (max-width: 423px) {
+  main .image-option .title{
+    display: block;
+  }
+}
 @media (max-width: 468px) {
   form {
     text-align: center;

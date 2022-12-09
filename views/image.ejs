@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link rel="stylesheet" href="stylesheets/header.css" />
     <link rel="stylesheet" href="stylesheets/mobile.css" />
-    <script src="javascripts/image.js" defer></script>
+    
   </head>
   <body>
     <header>
@@ -26,39 +26,22 @@
       <div class="view">
         <dialog>
           <div class="close btn">X</div>
-          <!-- <div class="prev"><div class="icon"></div></div> -->
-          <!-- <h2><span>.</span></h2> -->
           <img id="dialog_image" src="images/search_finding.svg" />
           <div class="image-option">
-            <div class="title"><h5 id="dialog_title"></h5></div>
+            <div class="title"><h5 id="dialog_title"></h5>&nbsp;<h5 id="dialog_size"></h5></div>
             <div class="btn_option">
               <a href="#" id="dialog_source" target="_blank"
-                ><button class="btn">🌐 Source</button></a
-              >
+                ><button class="btn">🌐 Source</button></a>
               <button id="dialog_download" class="btn">🔽 Download</button>
               <button id="prev" class="btn">◀ Prev</button>
               <button id="next" class="btn">Next ▶</button>
             </div>
           </div>
-          <!-- <div class="next"><div class="icon"></div></div> -->
         </dialog>
         <% data.data.forEach((image, index) => { %>
         <figure id="<%= index %>">
-          <img
-            src="<%= /*image.image*/ image.detail.thumbnailLink %>"
-            class="thumb_image"
-            img_source="<%= image.detail.contextLink %>"
-            img_link="<%= image.image %>"
-            onclick="showTheImage('<%= index %>')"
-            alt="<%= image.title %>"
-          />
-          <!-- <figcaption> -->
-          <!-- <p>Title: <%#= image.title.slice(0,50)+'...' %></p> -->
-          <!-- <div class="image-option "> -->
-          <!-- <a href="<%#= image.detail.contextLink %>" target="_blank"><button class="btn">🌐 Source</button></a> -->
-          <!-- <button id="download" class="btn disable" onclick="downloadImage('<%#= index %>')">🔽 Download</button> -->
-          <!-- </div> -->
-          <!-- </figcaption> -->
+          <img src="<%= image.detail.thumbnailLink %>" img_source="<%= image.detail.contextLink %>" img_link="<%= image.image %>" class="thumb_image" onclick="showTheImage('<%= index %>')" alt="<%= image.title %>" />
+          <img src="images/download-icon.png" class="download-icon" onclick="downloadImage('<%= index %>')" alt="download-icon"/>
         </figure>
         <% }) %>
       </div>
@@ -71,5 +54,7 @@
       </div>
     </main>
     <footer>&copy; All right reserved 2022</footer>
+    <script src="javascripts/FileSaver.min.js"></script>
+    <script src="javascripts/image.js"></script>
   </body>
 </html>

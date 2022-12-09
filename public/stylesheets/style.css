@@ -140,6 +140,7 @@ header .right-side button{
   color: var(--color_white);
   box-shadow: none;
 }
+
 main {
   display: flex;
   flex-direction: column;
@@ -322,7 +323,7 @@ main .view {
   /* align-items: center; */
   margin-top: 6em;
   /* background-color: ; */
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   /* margin-bottom: 5em; */
   /* background-image: url(/src/upload/upload.png); */
   /* background-size: cover; */
@@ -334,6 +335,7 @@ main .view {
   min-height: 70vh;
 }
 main .view figure {
+  position: relative;
   /* border:1px solid var(--color_secundary); */
   /* background-color: var(--); */
   /* background-color: #e1fb4c36; */
@@ -372,6 +374,9 @@ main .view figure img {
     /* background-color: rgb(51, 19, 82); */
     /* flex:1; */
     /* width: 100%; */
+    display: flex;
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
 
   }
   main .image-option .btn_option{
@@ -386,6 +391,7 @@ main .view figure img {
 }
 main .image-option h5{
   color: var(--color_white);
+  /* flex: 1; */
 }
 main .image-option {
   /* background-color: #00875f; */
@@ -397,6 +403,18 @@ main .image-option {
   
   /* background-color: #721C24; */
   /* flex: 1; */
+}
+
+figure:hover > .download-icon{
+  visibility: visible;
+}
+.download-icon{
+  visibility: hidden;
+  max-width: 48px;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  z-index: 1;
 }
 
 /* figcaption{ */
