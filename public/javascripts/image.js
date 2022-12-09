@@ -75,35 +75,35 @@ function prevImage(id) {
     currentImageOnDialog = prev;
   } else setImageOnDialog(currentImageOnDialog);
 }
+function goToPrevPagination(index) {
+  const back = parseInt(index)-1;
+  const prev = back >= 1 ? back : 1;
+  goToPageBtn(prev)
+}
+function goToNextPagination(index) {
+  const next = parseInt(index)+1
+  goToPageBtn(next)
+  // console.log("🚀 ~ goToNextPagination ~ index", index)
+}
+function goToPageBtn(index) {
+  const pageToGo = parseInt(index)
+  const searchParams = window.location.search
+  const originURL = `${window.location.origin}/image`;
+
+  const isThisPageDiferentToActual = (searchParams.substring(searchParams.lastIndexOf("=")+1)) != pageToGo
+
+  if (isThisPageDiferentToActual) {
+    const searchParamsChanged = searchParams.replace(searchParams.substring(searchParams.lastIndexOf("=")+1), pageToGo)
+    window.location.href = originURL + searchParamsChanged
+  }
+}
 
 function downloadImage(id) {
   const imagePath = imageList[id].imgLink;
   const imageName = imageList[id].alt; 
-  // const imageName = getNameAndExtentionOfURL(imageList[id].alt); 
- const $olaManuel = 'Sousa'
   saveAs(imagePath, imageName)
-  // console.log(imageName);
-  // console.log(imagePath);
 }
-
 // function getNameAndExtentionOfURL(url){
   // return url.substring(url.lastIndexOf("/")+1)
 // }
 
-// const image = ["https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg"]
-// const blob = new Blob([image], {type: "octet-stream"})
-// const blob = new Blob([image], {type: "image/jpg"})
-// const href = URL.createObjectURL(blob)
-// const a = Object.assign(document.createElement("a"), {
-  // href,
-  // style: "display:none",
-  // download: 'Textando.jpg' 
-// }) 
-// document.body.appendChild(a)
-// console.log(a);
-// a.click()
-// URL.revokeObjectURL(href)
-// a.remove()
-
-// console.log(blob);
-// console.log(href);

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="./../public/images/" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/soudev.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/style.css" />
@@ -46,11 +46,12 @@
         <% }) %>
       </div>
       <div class="pagination">
-        <button id="prev" class="btn">◀ Prev</button>
-        <% for( let i = 11; i <= 11+2; i++ ) { %>
-          <button class="btn"><%= i %></button>
+        <button id="prev" class="btn" onclick="goToPrevPagination('<%= data.searchInformation.actualPage %>')">◀ Prev</button>
+        
+        <% for( let i = data.searchInformation.actualPage; i <= data.searchInformation.actualPage+2; i++ ) { %>
+          <button class="btn <%= data.searchInformation.actualPage == i ? 'active' : '' %>" onclick="goToPageBtn('<%= i %>')" ><%= i %></button>
         <% } %>
-        <button id="next" class="btn">Next ▶</button>
+        <button id="next" class="btn" onclick="goToNextPagination('<%= data.searchInformation.actualPage %>')" >Next ▶</button>
       </div>
     </main>
     <footer>&copy; All right reserved 2022</footer>

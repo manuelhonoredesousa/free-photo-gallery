@@ -436,6 +436,9 @@ main .image-option button {
   padding: 0.5em;
   /* background-color: red; */
 }
+.active{
+  background-color: var(--color_primary);
+}
 /* .disable{ */
   /* cursor: not-allowed; */
   /* background-color: var(--color_gray_300); */

@@ -52,7 +52,14 @@
 // const text = "https://hips.hearstapps.com/hmg-prod/images/2022-ford-mustang-shelby-gt500-02-1636734552.jpg"
 const text = "https://images.squarespace-cdn.com/content/v1/5f99b7932a3e654c26fd0c52/1603910766840-BICQOF5R5PDGWET4DNRC/17_Del+Mar+Plaza_Photoshoot_R1-94.jpg?format=2500w"
 
-console.log(text.replace(text.substring(text.lastIndexOf(".")+1), 'jpg'));
+// console.log(text.replace(text.substring(text.lastIndexOf(".")+1), 'jpg'));
+
+const pages = 0
+const index = 0
+
+//window.location.href
+const ccc = 'http://localhost:3000/image?search=Michael%20Jackson&startIndex=21'
+console.log(ccc.replace(ccc.substring(ccc.lastIndexOf("=")+1), '30'));
 
 
 // console.log(text.substring(text.lastIndexOf("/")+1));
