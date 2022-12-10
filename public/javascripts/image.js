@@ -8,6 +8,7 @@ const $DialogTitle = document.querySelector("#dialog_title");
 const $DialogLink = document.querySelector("#dialog_source");
 const $DialogSize = document.querySelector("#dialog_size");
 const $body = document.querySelector("body");
+const $searchTxt = document.querySelector("#searchTxt")
 const $allImageOnPage = Array.from(document.getElementsByClassName("thumb_image"));
 const imageList = [];
 let currentImageOnDialog = null;
@@ -17,6 +18,14 @@ $BtnCloseModal.onclick = () => closeTheImage();
 $BtnNext.onclick = () => nextImage(currentImageOnDialog);
 $BtnPrev.onclick = () => prevImage(currentImageOnDialog);
 $DialogDownload.onclick = () => downloadImage(currentImageOnDialog);
+
+
+$searchTxt.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchingFor()
+  }
+});
 
 function loaddingPage() {
   $allImageOnPage.forEach((image, index) => {
@@ -55,7 +64,6 @@ function showTheImage(id) {
   $modalDialog.showModal();
   setImageOnDialog(currentImageOnDialog);
 }
-
 function nextImage(id) {
   setDefaultDialogImage();
   const next = id + 1;
@@ -83,7 +91,6 @@ function goToPrevPagination(index) {
 function goToNextPagination(index) {
   const next = parseInt(index)+1
   goToPageBtn(next)
-  // console.log("🚀 ~ goToNextPagination ~ index", index)
 }
 function goToPageBtn(index) {
   const pageToGo = parseInt(index)
@@ -97,7 +104,10 @@ function goToPageBtn(index) {
     window.location.href = originURL + searchParamsChanged
   }
 }
-
+function searchingFor(){
+  const originURL = window.location.origin
+  window.location.href = `${originURL}/image?search=${$searchTxt.value}&startIndex=1`;
+}
 function downloadImage(id) {
   const imagePath = imageList[id].imgLink;
   const imageName = imageList[id].alt; 

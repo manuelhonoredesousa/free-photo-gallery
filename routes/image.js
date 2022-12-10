@@ -11,10 +11,8 @@ router.get("/", function (req, res, next) {
   if (search && startIndex) {
     const actualPage = parseInt(startIndex)
     const startLookingAtIndex = actualPage == 1 ? 1 : (actualPage-1)*(srchNum+1)
-
-    console.log("actualPage", actualPage)
-    console.log("🚀 ~ startLookingAtIndex", startLookingAtIndex)
-
+    // console.log("actualPage", actualPage)
+    // console.log("🚀 ~ startLookingAtIndex", startLookingAtIndex)
     let data = test
     data.searchInformation.actualPage = actualPage
     res.render("image", { title: "Search Page:", search, data })

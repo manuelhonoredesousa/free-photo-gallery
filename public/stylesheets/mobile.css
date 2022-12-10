@@ -12,8 +12,17 @@
     /* justify-content: center; */
     /* text-align: center; */
   /* } */
-  header form input[type="text"]{
-    min-width: 248px;
+  /* header input{ */
+    /* min-width: 248px; */
+  /* } */
+}
+@media (max-width: 404px) {
+  header input{
+    margin-bottom: .5em;
+    width: 250px;
+  }
+  header {
+    padding: .5em;
   }
 }
 @media (max-width: 423px) {
@@ -22,12 +31,12 @@
   }
 }
 @media (max-width: 468px) {
-  form {
+  /* form {
     text-align: center;
-  }
-  header form input[type="text"]{
-    margin-bottom: .5em;
-  }
+  } */
+  /* header input{ */
+    /* margin-bottom: .5em; */
+  /* } */
 }
 @media (max-width: 480px) {
   /* Header to bem in bottom */

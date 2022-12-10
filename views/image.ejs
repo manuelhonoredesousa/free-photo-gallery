@@ -12,17 +12,18 @@
     
   </head>
   <body>
+
     <header>
       <h1><a href="/">Free Photo Gallery</a></h1>
       <div class="right-side">
-        <form action="/image" method="get">
-          <input type="text" name="search" value="<%= search %>" />
-          <input type="submit" value="Search Picture" class="btn" />
-        </form>
+          <input type="text" id="searchTxt" value="<%= search %>" />
+          <button id="searchBtn" onclick="searchingFor()" class="btn">Search</button>
       </div>
     </header>
+    
     <main>
       <div class="result-information">//TODO work on this feature</div>
+      
       <div class="view">
         <dialog>
           <div class="close btn">X</div>
@@ -45,14 +46,15 @@
         </figure>
         <% }) %>
       </div>
+      
       <div class="pagination">
         <button id="prev" class="btn" onclick="goToPrevPagination('<%= data.searchInformation.actualPage %>')">◀ Prev</button>
-        
         <% for( let i = data.searchInformation.actualPage; i <= data.searchInformation.actualPage+2; i++ ) { %>
           <button class="btn <%= data.searchInformation.actualPage == i ? 'active' : '' %>" onclick="goToPageBtn('<%= i %>')" ><%= i %></button>
         <% } %>
         <button id="next" class="btn" onclick="goToNextPagination('<%= data.searchInformation.actualPage %>')" >Next ▶</button>
       </div>
+
     </main>
     <footer>&copy; All right reserved 2022</footer>
     <script src="javascripts/FileSaver.min.js"></script>
