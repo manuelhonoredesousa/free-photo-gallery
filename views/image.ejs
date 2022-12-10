@@ -17,22 +17,20 @@
       <h1><a href="/">Free Photo Gallery</a></h1>
       <div class="right-side">
           <input type="text" id="searchTxt" value="<%= search %>" />
-          <button id="searchBtn" onclick="searchingFor()" class="btn">Search</button>
+          <button onclick="searchingFor()" class="btn">Search</button>
       </div>
     </header>
     
     <main>
-      <div class="result-information">//TODO work on this feature</div>
-      
-      <div class="view">
+      <div class="view v-image">
         <dialog>
           <div class="close btn">X</div>
           <img id="dialog_image" src="images/search_finding.svg" />
           <div class="image-option">
             <div class="title"><h5 id="dialog_title"></h5>&nbsp;<h5 id="dialog_size"></h5></div>
             <div class="btn_option">
-              <a href="#" id="dialog_source" target="_blank"
-                ><button class="btn">🌐 Source</button></a>
+              <a href="#" id="dialog_source" target="_blank">
+              <button class="btn">🌐 Source</button></a>
               <button id="dialog_download" class="btn">🔽 Download</button>
               <button id="prev" class="btn">◀ Prev</button>
               <button id="next" class="btn">Next ▶</button>
@@ -56,7 +54,7 @@
       </div>
 
     </main>
-    <footer>&copy; All right reserved 2022</footer>
+    <script src="javascripts/main.js"></script>
     <script src="javascripts/FileSaver.min.js"></script>
     <script src="javascripts/image.js"></script>
   </body>

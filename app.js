@@ -8,7 +8,7 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const imageRouter = require('./routes/image');
-const downloadRouter = require('./routes/download');
+
 
 const app = express();
 
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/image', imageRouter);
-app.use('/download', downloadRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

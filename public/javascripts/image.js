@@ -8,7 +8,6 @@ const $DialogTitle = document.querySelector("#dialog_title");
 const $DialogLink = document.querySelector("#dialog_source");
 const $DialogSize = document.querySelector("#dialog_size");
 const $body = document.querySelector("body");
-const $searchTxt = document.querySelector("#searchTxt")
 const $allImageOnPage = Array.from(document.getElementsByClassName("thumb_image"));
 const imageList = [];
 let currentImageOnDialog = null;
@@ -19,19 +18,11 @@ $BtnNext.onclick = () => nextImage(currentImageOnDialog);
 $BtnPrev.onclick = () => prevImage(currentImageOnDialog);
 $DialogDownload.onclick = () => downloadImage(currentImageOnDialog);
 
-
-$searchTxt.addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    searchingFor()
-  }
-});
-
 function loaddingPage() {
   $allImageOnPage.forEach((image, index) => {
     const toSave = {
       id: index,
-      alt: image.alt.slice(0,40)+'...',
+      alt: image.alt,
       source: image.attributes.img_source.value,
       imgLink: image.attributes.img_link.value,
     };
@@ -103,10 +94,6 @@ function goToPageBtn(index) {
     const searchParamsChanged = searchParams.replace(searchParams.substring(searchParams.lastIndexOf("=")+1), pageToGo)
     window.location.href = originURL + searchParamsChanged
   }
-}
-function searchingFor(){
-  const originURL = window.location.origin
-  window.location.href = `${originURL}/image?search=${$searchTxt.value}&startIndex=1`;
 }
 function downloadImage(id) {
   const imagePath = imageList[id].imgLink;

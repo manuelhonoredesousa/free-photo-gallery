@@ -20,11 +20,14 @@
             the address, or the page has been moved to another URL. If you think
             this is an error contact support. -->
           </p>
-          <button id="get_back">Get back to home page</button>
-          
+          <button onclick="goBack()">Get back</button>
         </div>
       </section>
     </main>
-    <script src="src/main.js"></script>
+    <script>
+      function goBack() {
+        history.back();
+      } 
+    </script>
   </body>
 </html>

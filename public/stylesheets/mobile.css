@@ -1,23 +1,10 @@
-@media (max-width: 280px) {
-  /* header form input[type="text"]{} */
-
-  /* main .view {
-    column-count: 1;
-    column-gap: 15px;
-  } */
-}
-@media (max-width: 331px) {
-  /* form { */
-    /* display: block; */
-    /* justify-content: center; */
-    /* text-align: center; */
-  /* } */
-  /* header input{ */
-    /* min-width: 248px; */
-  /* } */
+@media (max-width: 338px) {
+  main .view{
+    margin-top: 7.5em;
+  }
 }
 @media (max-width: 404px) {
-  header input{
+  #searchTxt{
     margin-bottom: .5em;
     width: 250px;
   }
@@ -30,34 +17,18 @@
     display: block;
   }
 }
-@media (max-width: 468px) {
-  /* form {
-    text-align: center;
-  } */
-  /* header input{ */
-    /* margin-bottom: .5em; */
-  /* } */
-}
 @media (max-width: 480px) {
-  /* Header to bem in bottom */
-
   main .view {
     column-count: 2;
     column-gap: 10px;
   }
 }
-/* @media (max-width: 460px) {} */
 @media (max-width: 500px) {
     dialog {
       min-width: 100%;
     }
     dialog .image-option {
       padding: 0em 0.5em;
-      /* margin-top: 0.5em; */
-      /* display: flex; */
-      /* justify-content: center; */
-      /* align-items: center; */
-      /* column-gap: 0.3em; */
     }
   }
 @media (max-width: 657px) {
@@ -71,12 +42,7 @@
     width: 100%;
     margin-top: 0.3em;
   }
-  /* main .view { */
-    /* column-count: 3; */
-    /* column-gap: 10px; */
-  /* } */
 }
-
 @media (max-width: 854px) {
   header h1 {
     font-size: 1em;

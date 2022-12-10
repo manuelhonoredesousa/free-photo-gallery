@@ -4,7 +4,6 @@ const customSearch = google.customsearch("v1");
 const googleSearchCredentials = require("./../src/apiKey.json")
 
 async function googleImage({ query, nums, size, pagination }, actualPage) {
-  // console.log(`>> Searching '${query}' <<`);
   const res = await customSearch.cse.list({
     auth: googleSearchCredentials.apiKey,
     cx: googleSearchCredentials.seachEngineId,
@@ -12,13 +11,9 @@ async function googleImage({ query, nums, size, pagination }, actualPage) {
     searchType: "image",
     imgSize: size, //valid intput: "huge",
     num: nums, // number of results you want to get
-    // page: pagination
-    // previousPage:
-    // nextPage:3
     start:pagination
   });
   ;
-  // console.log(res.data.queries);
     return {
       searchInformation: {
         searchTime: res.data.searchInformation.searchTime,
@@ -29,14 +24,14 @@ async function googleImage({ query, nums, size, pagination }, actualPage) {
       },
       data: res.data.items.map((image) => {
         return {
-          title: image.title,
-          fileFormat: image.fileFormat.split("/")[image.fileFormat.split("/").length - 1],
+          // image.alt.slice(0,40)+'...'
+          title: `${image.title.slice(0,35)}.${image.fileFormat.substring(image.fileFormat.lastIndexOf("/")+1) ? image.fileFormat.substring(image.fileFormat.lastIndexOf("/")+1) : jpg}`,
+          // fileFormat: image.fileFormat.substring(image.fileFormat.lastIndexOf("/")+1),
+          // fileFormat: image.fileFormat.split("/")[image.fileFormat.split("/").length - 1],
           image: image.link,
           detail: image.image,
         };
       }),
     };
   }
-
-  // googleImage({ query: "migos", nums: 10, size: 'huge' })
 module.exports = googleImage;

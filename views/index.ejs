@@ -14,21 +14,25 @@
   <body>
     <header>
       <h1><%= title %></h1>
-      <div class="right-side">
-        <form action="/image" method="get">
-          <input type="text" name="search" />
-          <input type="submit" value="Search Picture" class="btn">        
-        </form>
-        <button class="btn">⚙️</button>
-      </div>
     </header>
     <main>
- 
-      <div class="view">
-       <h1>INDEX</h1>
+      <div class="view v-index">
+        <h1>What picture your looking for?</h1>
+        <div class="right-side">
+          <input type="text" id="searchTxt" />
+          <button onclick="searchingFor()" class="btn active">Search</button>
+        </div>
+        <div class="info">
+          <p>Unfortunately the google API in use is free and for this reason it has limitations on the number of searches per day...</p>
+          <ul>
+            <li>Project Repository - <a href="https://github.com/manuelhonoredesousa/free-photo-gallery" target="_blank">Click here</a></li>
+            <li>My Github - <a href="https://github.com/manuelhonoredesousa" target="_blank">Click here</a></li>
+            <li>My LinkedIn - <a href="https://www.linkedin.com/in/manuelhonoredesousa" target="_blank">Click here</a></li>
+            <li>Portfolio - <a href="https://soudev.netlify.app" target="_blank">Click here</a></li>
+          </ul>
+        </div>
       </div>
-
     </main>
-    <footer>&copy; All right reserved 2022</footer>
+    <script src="javascripts/main.js"></script>
   </body>
 </html>
