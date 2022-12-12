@@ -88,8 +88,7 @@ function goToPageBtn(index) {
   const pageToGo = parseInt(index)
   const searchParams = window.location.search
   const originURL = `${window.location.origin}/image`;
-
-  const isThisPageDiferentToActual = (searchParams.substring(searchParams.lastIndexOf("=")+1)) != pageToGo
+  const isThisPageDiferentToActual = (searchParams.substring(searchParams.lastIndexOf("=")+1)) !== pageToGo
 
   if (isThisPageDiferentToActual) {
     const searchParamsChanged = searchParams.replace(searchParams.substring(searchParams.lastIndexOf("=")+1), pageToGo)

@@ -169,7 +169,8 @@ border-radius: 16px;
   -ms-border-radius: .5em;
   -o-border-radius: .5em;
 }
-.v-index p{margin-bottom: 1.5em;}
+.v-index p{margin-bottom: 1em;}
+.v-index p{margin-top: 1em;}
 .v-index ul{margin-left: 2em;}
 .v-index li{margin-bottom: .4em;}
 .v-index .info a{color: var(--color_gray_100); text-decoration: none; font-weight: bold; }

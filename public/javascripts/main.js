@@ -1,27 +1,15 @@
 const $searchTxt = document.querySelector("#searchTxt");
 const $imgResolution = document.querySelector("#resolution");
 const $imgType = document.querySelector("#imageType");
-let searchResolution = "";
-let searchType = "";
 
-$imgResolution.onchange = (e) => onChangeSelect(e);
-$imgType.onchange = (e) => onChangeSelect(e);
+$searchTxt.onkeypress = (event) => enterPressed(event);
 
-// $searchTxt.onkeypress = (e) => enterPressed(e);
-
-
-function enterPressed(e) {
-  console.log("Enter");
+function enterPressed(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    searchingFor();
+  }
 }
-// $searchTxt.forEach((txt) => {
-  // txt.  txt.addEventListener("keypress", function (event) {
-    // if (event.key === "Enter") {
-      // event.preventDefault();
-      // searchingFor();
-    // }
-  // });
-// });
-
 function onChangeSelect(e) {
   const selectedOption = e.srcElement.value;
   const id = e.target.id;
@@ -33,35 +21,34 @@ function onChangeSelect(e) {
 function getSelectOption() {
   const isQualitySet = localStorage.getItem("quality");
   const isImageTypeSet = localStorage.getItem("typeOfImage");
+  const isIndexPage = window.document.title == 'Free Photo Gallery' ? true : false
 
-  if (isQualitySet && isImageTypeSet) {
-    searchResolution = isQualitySet;
-    searchType = isImageTypeSet;
-  } else {
+  if(!isQualitySet && !isImageTypeSet) {
     setSelectOption("LARGE", "quality", 1);
     setSelectOption("photo", "typeOfImage", 2);
   }
-  setSelectTag(searchResolution, searchType);
+
+  setSelectTag(isQualitySet, isImageTypeSet,isIndexPage);
+  return {type:isImageTypeSet, quality:isQualitySet};
 }
-function setSelectTag(searchResolution, searchType) {
-  Array.from($imgResolution).forEach((element) => {
-    if (element.value == searchResolution) element.selected = true;
-  });
-  Array.from($imgType).forEach((element) => {
-    if (element.value == searchType) element.selected = true;
-  });
+function setSelectTag(quality, type, state) {
+  if(state){
+    Array.from($imgResolution).forEach((element) => {
+      if (element.value == quality) element.selected = true;
+    });
+    Array.from($imgType).forEach((element) => {
+      if (element.value == type) element.selected = true;
+    });
+  }
 }
 function setSelectOption(selectedOption, option, id) {
   if (id == 1) {
     localStorage.setItem(option, selectedOption);
-    searchResolution = selectedOption;
   } else {
     localStorage.setItem(option, selectedOption);
-    searchType = selectedOption;
   }
 }
-
 function searchingFor() {
   const originURL = window.location.origin;
-  window.location.href = `${originURL}/image?search=${$searchTxt.value}&typeOfImage=${searchType}&quality=${searchResolution}&startIndex=1`;
+  window.location.href = `${originURL}/image?search=${$searchTxt.value}&typeOfImage=${getSelectOption().type}&quality=${getSelectOption().quality}&startIndex=1`;
 }
