@@ -1,0 +1,117 @@
+:root {
+  --title_color: #c1c2c5;
+  --text_color: #909296;
+  --first_color: #216399;
+  --second_color: #154063;
+  --third_color: #1a1b1e;
+  --fourth_color: #1a1b1e86;
+  --fifth_color: #242424;
+  --font-family: "Greycliff CF", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--third_color);
+  font-family: var(--font-family);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+section h1 {
+  font-size: 36rem;
+  color: var(--fifth_color);
+}
+
+main .text {
+  position: absolute;
+  bottom: 0;
+  max-width: 60%;
+  text-align: center;
+}
+
+main .text h1 {
+  margin-bottom: 0.7em;
+  font-size: 34px;
+  color: var(--title_color);
+}
+
+main .text p {
+  font-size: 18px;
+  line-height: 27.9px;
+  color: var(--text_color);
+  margin-bottom: 2em;
+}
+
+button {
+  padding: 1rem;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--title_color);
+  background-color: var(--first_color);
+  cursor: pointer;
+  border: none;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -ms-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+}
+button:hover {
+  background-color: var(--second_color);
+  color: var(--text_color);
+}
+
+@media only screen and (max-width: 994px) {
+  section h1 {
+    font-size: 27rem;
+  }
+}
+@media only screen and (max-width: 832px) {
+  section h1 {
+    font-size: 24rem;
+  }
+}
+@media only screen and (max-width: 810px) {
+  section h1 {
+    font-size: 18rem;
+  }
+  main .text {
+    max-width: 100%;
+  }
+}
+@media only screen and (max-width: 493px) {
+  section h1 {
+    font-size: 15rem;
+    margin-bottom: 0.2em;
+  }
+}
+@media only screen and (max-width: 380px) {
+  section h1 {
+    font-size: 10rem;
+    margin-bottom: 1em;
+  }
+}

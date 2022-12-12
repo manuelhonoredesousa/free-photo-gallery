@@ -1,0 +1,50 @@
+@media (max-width: 338px) {
+  main .view{
+    margin-top: 7.5em;
+  }
+}
+@media (max-width: 404px) {
+  #searchTxt{
+    margin-bottom: .5em;
+    width: 250px;
+  }
+  header {
+    padding: .5em;
+  }
+}
+@media (max-width: 423px) {
+  main .image-option .title{
+    display: block;
+  }
+}
+@media (max-width: 480px) {
+  main .view {
+    column-count: 2;
+    column-gap: 10px;
+  }
+}
+@media (max-width: 500px) {
+    dialog {
+      min-width: 100%;
+    }
+    dialog .image-option {
+      padding: 0em 0.5em;
+    }
+  }
+@media (max-width: 657px) {
+  header {
+    flex-direction: column;
+    row-gap: 1em;
+  }
+}
+@media (max-width: 724px) {
+  main .image-option .btn_option {
+    width: 100%;
+    margin-top: 0.3em;
+  }
+}
+@media (max-width: 854px) {
+  header h1 {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,13 @@
+header a{
+    color: var(--color_white);
+    /* border: 1px solid var(--color_primary_hover); */
+    text-decoration: none;
+    transition: .3s ease-in-out;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -ms-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+header a:hover{
+    color: var(--color_gray_200);
+}

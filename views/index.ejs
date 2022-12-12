@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="shortcut icon" href="./../public/images/" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link rel="stylesheet" href="stylesheets/header.css" />
+    <link rel="stylesheet" href="stylesheets/mobile.css" />
+    <script src="javascripts/index.js" defer></script>
+  </head>
+  <body onload="getSelectOption()">
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <main>
+      <div class="view v-index">
+        <h1>What picture your looking for?</h1>
+        <div class="right-side">
+          <input type="text" id="searchTxt" />
+          <button onclick="searchingFor()" class="btn active">Search</button>
+        </div>
+
+        <div>
+          Image resolution: 
+          <select id="resolution">
+            <option value="HUGE">HUGE</option>
+            <option value="LARGE" selected>LARGE</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="SMALL">SMALL</option>
+            <option value="ICON">ICON</option>
+          </select>
+        </div>
+        <div>
+          Image Type: 
+          <select id="imageType">
+            <option class="img-type" value="photo" selected>Photo</option>
+            <option class="img-type" value="animated">Animated</option>
+          </select>
+        </div>
+
+        <div class="info">
+          <p>Unfortunately the google API in use is free and for this reason it has limitations on the number of searches per day...</p>
+          <ul>
+            <li>Project Repository - <a href="https://github.com/manuelhonoredesousa/free-photo-gallery" target="_blank">Click here</a></li>
+            <li>My Github - <a href="https://github.com/manuelhonoredesousa" target="_blank">Click here</a></li>
+            <li>My LinkedIn - <a href="https://www.linkedin.com/in/manuelhonoredesousa" target="_blank">Click here</a></li>
+            <li>Portfolio - <a href="https://soudev.netlify.app" target="_blank">Click here</a></li>
+          </ul>
+          <p>If you want to help the project so that we can pay for the hosting:</p>
+          <ul>
+            <li>BTC - 1AXtxAo6RWpyXLzt5tzU7hRUAmce3rgmrp</li>
+            <li>BCH - qrl7unl97v5p5k3cwm9erchk8wtghzt7vg2l8q4egn</li>
+            <li>LTC - LQ2WLDJC1uW6wqutHDGhFwbbA8rDxMrFZp</li>
+            <li>DOGE - D9BUz7DXrjM6UAm8ef9u7j5jW2ymhXLR5o</li>
+            <li>TRX - TNfVVQEjnNz382XBEETXajPvZUsTS8FqAP</li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script src="javascripts/main.js"></script>
+  </body>
+</html>
