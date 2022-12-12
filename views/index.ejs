@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="stylesheets/mobile.css" />
     <script src="javascripts/index.js" defer></script>
   </head>
-  <body>
+  <body onload="getSelectOption()">
     <header>
       <h1><%= title %></h1>
     </header>
@@ -22,8 +22,28 @@
           <input type="text" id="searchTxt" />
           <button onclick="searchingFor()" class="btn active">Search</button>
         </div>
+
+        <div>
+          Image resolution: 
+          <select id="resolution">
+            <option value="HUGE">HUGE</option>
+            <option value="LARGE" selected>LARGE</option>
+            <option value="MEDIUM">MEDIUM</option>
+            <option value="SMALL">SMALL</option>
+            <option value="ICON">ICON</option>
+          </select>
+        </div>
+        <div>
+          Image Type: 
+          <select id="imageType">
+            <option value="photo" selected>Photo</option>
+            <option value="animated">Animated</option>
+          </select>
+        </div>
+
         <div class="info">
           <p>Unfortunately the google API in use is free and for this reason it has limitations on the number of searches per day...</p>
+          <p>OBS: </p>
           <ul>
             <li>Project Repository - <a href="https://github.com/manuelhonoredesousa/free-photo-gallery" target="_blank">Click here</a></li>
             <li>My Github - <a href="https://github.com/manuelhonoredesousa" target="_blank">Click here</a></li>

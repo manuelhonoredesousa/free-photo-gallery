@@ -1,19 +1,20 @@
 const google = require("googleapis").google;
 const customSearch = google.customsearch("v1");
-// const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
-const googleSearchCredentials = require("./../src/apiKey.json")
+const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
+// const googleSearchCredentials = require("./../src/apiKey.json")
 
-async function googleImage({ query, nums, size, pagination }, actualPage) {
+async function googleImage({ query, nums, size, pagination, safe, imageType }, actualPage) {
   const res = await customSearch.cse.list({
     auth: googleSearchCredentials.apiKey,
     cx: googleSearchCredentials.seachEngineId,
-    q: query, //Search Text
+    q: query, 
     searchType: "image",
-    imgSize: size, //valid intput: "huge",
-    num: nums, // number of results you want to get
-    start:pagination
+    imgSize: size, 
+    num: nums, 
+    start:pagination,
+    safe:safe,
+    imgType: imageType,
   });
-  ;
     return {
       searchInformation: {
         searchTime: res.data.searchInformation.searchTime,
@@ -34,4 +35,21 @@ async function googleImage({ query, nums, size, pagination }, actualPage) {
       }),
     };
   }
-module.exports = googleImage;
+
+console.log(googleSearchCredentials);
+  
+  // const search = 'cars' 
+  // const startIndex = '1' 
+  // const typeOfImage = 'photo' 
+  // const quality = 'MEDIUM' 
+// 
+  // const srchNum = 10;
+  // const secure = 'off'
+  // const actualPage = parseInt(startIndex)
+  // const startLookingAtIndex = actualPage == 1 ? 1 : (actualPage-1)*(srchNum+1)
+    // 
+  // googleImage({ query: search, nums: srchNum, size: quality, pagination: startLookingAtIndex, safe: secure, imageType:typeOfImage }, actualPage)
+      // .then((data) => console.log(data))
+      // .catch((err) => console.log("error ->> \n",err ));
+  
+// module.exports = googleImage;
