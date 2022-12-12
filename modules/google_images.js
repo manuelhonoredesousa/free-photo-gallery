@@ -2,12 +2,12 @@ require("dotenv").config();
 
 const google = require("googleapis").google;
 const customSearch = google.customsearch("v1");
-const googleSearchCredentials = {apiKey: process.env.apiKey, seachEngineId: process.env.seachEngineId}
+const googleSearchCredentials = {cseId: process.env.cseId, apiKey: process.env.apiKey}
 
 async function googleImage({ query, nums, size, pagination, safe, imageType }, actualPage) {
   const res = await customSearch.cse.list({
-    auth: googleSearchCredentials.apiKey,
-    cx: googleSearchCredentials.seachEngineId,
+    auth: googleSearchCredentials.cseId,
+    cx: googleSearchCredentials.apiKey,
     q: query, 
     searchType: "image",
     imgSize: size, 
