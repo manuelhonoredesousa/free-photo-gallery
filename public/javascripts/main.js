@@ -7,12 +7,21 @@ let searchType = "";
 $imgResolution.onchange = (e) => onChangeSelect(e);
 $imgType.onchange = (e) => onChangeSelect(e);
 
-$searchTxt.addEventListener("keypress", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    searchingFor();
-  }
-});
+// $searchTxt.onkeypress = (e) => enterPressed(e);
+
+
+function enterPressed(e) {
+  console.log("Enter");
+}
+// $searchTxt.forEach((txt) => {
+  // txt.  txt.addEventListener("keypress", function (event) {
+    // if (event.key === "Enter") {
+      // event.preventDefault();
+      // searchingFor();
+    // }
+  // });
+// });
+
 function onChangeSelect(e) {
   const selectedOption = e.srcElement.value;
   const id = e.target.id;

@@ -28,6 +28,7 @@ function loaddingPage() {
     };
     imageList.push(toSave);
   });
+  // getSelectOption()
 }
 function setImageOnDialog(image) {
   const img = imageList[image].imgLink;
