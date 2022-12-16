@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="./../public/images/" type="image/x-icon" />
+    <link rel="shortcut icon" href="images/soudev.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= title %></title>
     <link rel="stylesheet" href="stylesheets/style.css" />
     <link rel="stylesheet" href="stylesheets/header.css" />
     <link rel="stylesheet" href="stylesheets/mobile.css" />
-    <script src="javascripts/index.js" defer></script>
   </head>
   <body onload="getSelectOption()">
     <header>
@@ -20,7 +19,7 @@
         <h1>What picture your looking for?</h1>
         <div class="right-side">
           <input type="text" id="searchTxt" />
-          <button onclick="searchingFor()" class="btn active">Search</button>
+          <button onclick="searchingFor(1)" class="btn active">Search</button>
         </div>
 
         <div>
@@ -60,6 +59,7 @@
         </div>
       </div>
     </main>
+    <script src="javascripts/index.js"></script>
     <script src="javascripts/main.js"></script>
   </body>
 </html>
