@@ -88,11 +88,14 @@ function goToPageBtn(index) {
   const pageToGo = parseInt(index)
   const searchParams = window.location.search
   const originURL = `${window.location.origin}/image`;
-  const isThisPageDiferentToActual = (searchParams.substring(searchParams.lastIndexOf("=")+1)) !== pageToGo
-
+  const isThisPageDiferentToActual = parseInt(searchParams.substring(searchParams.lastIndexOf("=")+1)) !== pageToGo
   if (isThisPageDiferentToActual) {
-    const searchParamsChanged = searchParams.replace(searchParams.substring(searchParams.lastIndexOf("=")+1), pageToGo)
-    window.location.href = originURL + searchParamsChanged
+    const searchParam = new URLSearchParams(searchParams)
+    const search_ = searchParam.get("search");
+    const typeImg_ = searchParam.get("typeOfImage");
+    const quality_ = searchParam.get("quality");
+    //I did all this, to avoid some bugs on change page options
+    window.location.href = `${originURL}?search=${search_}&typeOfImage=${typeImg_}&quality=${quality_}&startIndex=${pageToGo}`    
   }
 }
 function downloadImage(id) {
